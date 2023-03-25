@@ -21,12 +21,12 @@ userRouter.post("/register", (req, res) => {
             await user.save()
             res.send({
                 message: "user created",
-                status: 1
+               
             })
         } catch (e) {
             res.send({
                 message: e.message,
-                status: 0
+              
             })
         }
 
@@ -52,25 +52,25 @@ userRouter.post("/login", async (req, res) => {
                     res.send({
                         message: "user login successfull",
                         token: token,
-                        status: 1,
+                    
                     });
                 } else {
                     res.send({
                         message: "incorrect password",
-                        status: 0,
+                       
                     });
                 }
             });
         } else {
             res.send({
                 message: "user does not exist",
-                status: 0,
+            
             });
         }
     } catch (e) {
         res.send({
             message: e.message,
-            status: 0,
+           
         })
 
     }
