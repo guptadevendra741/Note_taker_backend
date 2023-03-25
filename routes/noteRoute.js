@@ -17,13 +17,13 @@ noteRouter.get("/",async(req,res)=>{
             res.send({
                 data:data,
                 message:"success",
-                status:1,
+                
             })
         }catch(e){
             res.send({
              
                 message:e.message,
-                status:0,
+                
             })
         }
     })
@@ -42,7 +42,7 @@ noteRouter.post("/create",async(req,res)=>{
     }catch(e){
         res.send({
             message:e.message,
-            status:0,
+            
         })
     }
 
@@ -54,13 +54,13 @@ noteRouter.patch("/",async (req,res)=>{
         await noteModel.findByIdAndUpdate({_id:id},req.body)
         res.send({
             message:"Note updated",
-            status:1,
+            
         })
 
     }catch(e){
         res.send({
             message:e.message,
-            status:0,
+            
         })
     }
 })
